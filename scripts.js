@@ -13,5 +13,15 @@ function updateResources() {
 }
 
 function refreshQueue(amount) {
-    queueCasesCount
+    queueCasesCount += amount;
+    console.log('refreshed?')
+    updateResources()
 }
+
+function completeCase(amount) {
+    completedCasesCount += amount;
+    updateResources()
+}
+
+refreshButton.addEventListener('click', refreshQueue(casesPerRefresh));
+completeCaseButton.addEventListener('click', completeCase(casesPerComplete));
